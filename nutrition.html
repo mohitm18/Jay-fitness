@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* --- NEW RESPONSIVE DIET SECTION STYLES --- */
+    .diet-transformation-hub {
+      background: #fdfdff;
+      padding: 80px 5%;
+      text-align: center;
+    }
+
+    .diet-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid #eee;
+      display: flex;
+      flex-wrap: wrap; /* Mobile sathi wrap kela aahe */
+    }
+
+    .diet-info-side {
+      flex: 1;
+      min-width: 300px;
+      background: linear-gradient(135deg, #6c63ff, #00e5ff);
+      padding: 40px;
+      color: #fff;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .diet-table-side {
+      flex: 1.2;
+      min-width: 320px;
+      padding: 40px;
+      background: #fff;
+    }
+
+    .diet-custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .diet-custom-table tr {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .diet-custom-table td {
+      padding: 12px 5px;
+    }
+
+    /* Mobile Responsive Fixes */
+    @media (max-width: 768px) {
+      .diet-container {
+        flex-direction: column;
+      }
+      .diet-info-side, .diet-table-side {
+        padding: 30px 20px;
+      }
+      .diet-transformation-hub h2 {
+        font-size: 1.8rem !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Jay Nutritionist</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="nutrition.html">Nutrition</a>
+      <a href="workout.html">Training</a>
+      <a href="food.html">Food</a>
+      <a href="cloth.html">Clothing</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- TOP SECTION -->
+  <section class="section hero-future nutrition-hero-premium">
+    <h2>Nutrition Plans</h2>
+    <p>Fuel your performance with Jay's diet plans</p>
+  </section>
+
+   <!-- CTA -->
+
+   <section class="section">
+
+    <h2>Start Your Nutrition Journey</h2>
+
+    <p style="color:#666;margin-top:10px;">
+      Get customized diet plans from Professional Nutritionist.
+    </p>
+
+    <a class="btn" href="contact.html">Get Diet Plan</a>
+
+  </section>
+
+  <section class="diet-transformation-hub" style="padding: 40px 5%;">
+    <div class="diet-container" style="max-width: 1350px; min-height: 450px; display: flex; flex-wrap: wrap; margin: 0 auto; background: #fff; border-radius: 30px; box-shadow: 0 15px 45px rgba(0,0,0,0.07); overflow: hidden; border: 1px solid #eee;">
+      
+      <div class="diet-info-side" style="flex: 1; min-width: 300px; position: relative; background: #000; padding: 0; overflow: hidden;">
+        <div style="width: 100%; height: 100%; background-image: url('assets/images/vegFood.webp'); background-size: cover; background-position: center;"></div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 30px; color: #fff;">
+            <h3 style="font-family: 'Orbitron'; font-size: 1.5rem; margin-bottom: 5px;">Nutrition Mastery</h3>
+            <p style="font-size: 13px; opacity: 0.9;">Scientific metabolic blueprints for your success.</p>
+            <div style="margin-top: 10px; background: rgba(108, 99, 255, 0.9); padding: 5px 12px; border-radius: 8px; display: inline-block; font-size: 11px; font-weight: 700;">
+                🚀 ALL TYPES OF DIET INCLUDED
+            </div>
+        </div>
+      </div>
+
+      <div class="diet-table-side" style="flex: 1.5; min-width: 320px; padding: 35px; display: flex; flex-direction: column; justify-content: center;">
+        <h4 style="font-family: 'Orbitron'; color: #6c63ff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Online Diet Consultation</h4>
+        
+        <table class="diet-custom-table" style="width: 100%; border-collapse: collapse; font-size: 13px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #f0efff; color: #111; font-weight: 800;">
+              <td style="padding-bottom: 10px;">DURATION</td>
+              <td style="text-align: center; padding-bottom: 10px;">ORIGINAL</td>
+              <td style="text-align: right; padding-bottom: 10px;">OFFER</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>1st Week</b></td>
+              <td style="text-align: center; color: #ccc; text-decoration: line-through;">-</td>
+              <td style="text-align: right; font-weight: 700; color: #111;">₹799</td>
+            </tr>
+            <tr>
+              <td><b>2nd Week</b></td>
+              <td style="text-align: center; color: #aaa; text-decoration: line-through;">₹1,598</td>
+              <td style="text-align: right; font-weight: 700; color: #27ae60;">₹1,398</td>
+            </tr>
+            <tr>
+              <td><b>3rd Week</b></td>
+              <td style="text-align: center; color: #aaa; text-decoration: line-through;">₹2,397</td>
+              <td style="text-align: right; font-weight: 700; color: #27ae60;">₹1,797</td>
+            </tr>
+            <tr>
+              <td><b>4th Week</b></td>
+              <td style="text-align: center; color: #aaa; text-decoration: line-through;">₹3,196</td>
+              <td style="text-align: right; font-weight: 700; color: #27ae60;">₹1,996</td>
+            </tr>
+            <tr>
+              <td><b>5th Week</b></td>
+              <td style="text-align: center; color: #aaa; text-decoration: line-through;">₹3,995</td>
+              <td style="text-align: right; font-weight: 700; color: #27ae60;">₹2,245</td>
+            </tr>
+            <tr style="background: #f0efff; border-radius: 10px;">
+              <td style="padding: 12px 10px; font-weight: 800; color: #6c63ff;">6th Week Plan</td>
+              <td style="text-align: center; color: #888; text-decoration: line-through;">₹4,794</td>
+              <td style="text-align: right; padding-right: 10px; font-weight: 900; color: #111; font-size: 15px;">₹2,460</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 25px; flex-wrap: wrap; gap: 15px;">
+            <p style="font-size: 11px; color: #888; font-style: italic; margin: 0;">*Consistent adherence leads to guaranteed transformation.</p>
+            <a href="contact.html" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; font-size: 12px; background: #6c63ff; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600;">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero-future">
+
+    <div class="cards">
+
+      <div class="card bmi-scanner-card" id="openBmiBtn">
+        <div class="scanner-icon-wrap">
+          <div class="pulse-ring"></div>
+          <img src="assets/images/bmi-icon.webp" alt="BMI Scanner"
+            onerror="this.src='https://cdn-icons-png.flaticon.com/512/1616/1616487.png'">
+        </div>
+        <h4 style="margin-top:15px; color: #6c63ff;">Calculate your BMI</h4>
+        <p style="color:#111; font-weight: 500;">Check your health status & daily calorie needs instantly.</p>
+        <span class="hub-badge" style="margin-top: 10px; display: inline-block;">Launch Scanner →</span>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/weightloss.webp" width="200" height="220" alt="Weight Loss Plan">
+        <h4 style="margin-top:10px;">Weight Loss Plan</h4>
+        <p style="color:#666;">Burn fat efficiently with balanced calorie intake.</p>
+      </div>
+
+
+      <div class="card">
+        <img src="assets/images/food2.webp" width="200">
+        <h4 style="margin-top:10px;">Muscle Gain Diet</h4>
+        <p style="color:#666;">High protein meals for strength & growth.</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/food1.webp" width="200">
+        <h4 style="margin-top:10px;">Balanced Nutrition</h4>
+        <p style="color:#666;">Maintain health with smart food choices.</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/Diabetes.webp" alt="Diabetes Nutrition">
+        <h4>Diabetes Diet</h4>
+        <p>Manage blood sugar effectively with low glycemic meals and balanced nutrition.</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/Hypothyroidism1.webp" alt="Hypothyroidism Diet">
+        <h4>Hypothyroidism</h4>
+        <p>Support thyroid function with nutrient-rich meals and iodine-friendly foods.</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/Hyperthyroidism.jpeg" alt="Hyperthyroidism Diet">
+        <h4>Hyperthyroidism</h4>
+        <p>Focus on calming foods to balance metabolism and maintain energy levels.</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/PCOS:PCOD.jpg" alt="PCOS/PCOD Diet">
+        <h4>PCOS / PCOD</h4>
+        <p>Regulate hormones naturally with high-fiber, low-sugar, and anti-inflammatory foods.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DAILY PLAN SECTION -->
+
+  <section class="section hero-future">
+
+    <h2>Daily Nutrition Schedule</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="assets/images/Early-Morning.webp" alt="Early Morning Breakfast">
+        <h4>Early Morning</h4>
+        <p style="color:#666;">Warm water + lemon + soaked almonds</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/breakfast.jpeg" alt="Breakfast">
+        <h4>Breakfast</h4>
+        <p style="color:#666;">Oats / Poha / Idli with fruits</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/lunch.jpg" alt="Lunch">
+        <h4>Lunch</h4>
+        <p style="color:#666;">Grilled chicken / dal, brown rice, and salad</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/evening.webp" alt="Evening Snack">
+        <h4>Evening Snack</h4>
+        <p style="color:#666;">Green tea + sprouts / nuts</p>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/dinner.webp" alt="Dinner">
+        <h4>Dinner</h4>
+        <p style="color:#666;">Light protein meal – soup, salad, or steamed vegetables</p>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- PHILOSOPHY SECTION -->
+
+  <section class="section hero-future nutrition-hero-premium">
+
+    <h2>Jay's Nutrition Philosophy</h2>
+
+    <p style="max-width:650px;margin:auto;color:#666;margin-top:10px;">
+      Nutrition is the foundation of transformation.
+      Our programs are designed to improve strength, recovery and endurance.
+    </p>
+
+  </section>
+
+  <!-- BMR Calculator Modal -->
+  <div id="bmrModal" class="nutrition-modal">
+    <div class="nutrition-modal-content">
+      <span class="close">&times;</span>
+
+      <div class="nutrition-modal-header">
+        <div class="scanner-line"></div>
+        <h2>Biometric Analysis- BMI </h2>
+        <p id="plan-type">Initializing specialized nutrition scan...</p>
+      </div>
+
+      <form id="bmrForm" class="nutrition-future-form">
+        <div class="nutrition-input-row">
+          <div class="nutrition-input-group">
+            <label>Weight (kg)</label>
+            <input type="number" id="weight" required placeholder="Ex: 70">
+          </div>
+          <div class="nutrition-input-group">
+            <label>Height Unit</label>
+            <div class="nutrition-unit-toggle">
+              <span id="toggleCM" class="active-unit" onclick="switchUnit('cm')">CM</span>
+              <span style="color: #ccc;">|</span>
+              <span id="toggleFT" onclick="switchUnit('ft')">FT / IN</span>
+            </div>
+            <input type="number" id="height" required placeholder="Ex: 175" class="unit-field">
+            <div id="ft-inputs" class="hidden-unit" style="display: none; gap: 10px;">
+              <input type="number" id="height-ft" placeholder="ft" style="width: 50%;">
+              <input type="number" id="height-in" placeholder="in" style="width: 50%;">
+            </div>
+          </div>
+        </div>
+
+        <div class="nutrition-input-row">
+          <div class="nutrition-input-group">
+            <label>Age (Years)</label>
+            <input type="number" id="age" required placeholder="Ex: 25">
+          </div>
+          <div class="nutrition-input-group">
+            <label>Gender Identity</label>
+            <select id="gender" required>
+              <option value="male">Male (Alpha)</option>
+              <option value="female">Female (Beta)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="nutrition-btn-glow">Execute Analysis</button>
+      </form>
+
+      <div id="resultsWrapper" class="hidden">
+        <div class="divider"></div>
+        <div style="text-align: center; margin-bottom: 10px;">
+          <span style="font-family: 'Orbitron'; font-size: 12px; letter-spacing: 2px; color: #6c63ff;">ANALYSIS
+            COMPLETE</span>
+        </div>
+
+        <div id="bmrResult" style="text-align: center;"></div>
+
+        <div class="bmi-visualizer" style="margin: 25px 0;">
+          <div class="bmi-labels">
+            <span>Low</span>
+            <span>Ideal</span>
+            <span>High</span>
+            <span>Extreme</span>
+          </div>
+          <div id="bmiBarContainer"
+            style="height: 10px; background: #f0f0f0; border-radius: 20px; overflow: hidden; border: 1px solid #eee;">
+            <div id="bmiBar"
+              style="height: 100%; width: 0%; transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);"></div>
+          </div>
+        </div>
+
+        <div id="healthAdvice"
+          style="font-size: 14px; line-height: 1.6; color: #444; background: #fdfdff; padding: 15px; border-radius: 12px; border: 1px dashed #6c63ff;">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-logo">Jay's Nutritionist</h3>
+          <p style="color: #666; line-height: 1.6;">Transforming lives through Jay's training and scientific nutrition.
+            Join the V0ID community today.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <nav class="footer-nav">
+            <a class="active" href="index.html">Home</a>
+            <a href="workout.html">Training</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-column contact-info">
+          <h4>Get in Touch</h4>
+          <p>📧 jaynutritionist@gmail.com</p>
+          <p>📞 +91 8484823170</p>
+          <p>📍 Eon it park Phase 2 Kharadi, Pune, Maharashtra, India</p>
+        </div>
+      </div>
+      <p class="copy">© 2026 Jay's Nutritionist | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. DOM Elements Select kara
+        const bmiBtn = document.getElementById('openBmiBtn');
+        const bmrModal = document.getElementById('bmrModal');
+        const bmrForm = document.getElementById('bmrForm');
+        const bmrResultsWrapper = document.getElementById('resultsWrapper');
+        const bmrClose = document.querySelector('.close');
+        const planTypeText = document.getElementById('plan-type');
+        const bmrResult = document.getElementById('bmrResult');
+        const bmrBar = document.getElementById('bmiBar');
+        const healthAdvice = document.getElementById('healthAdvice');
+
+        // 2. Open Modal Logic (Fakt BMI Card sathi)
+        if (bmiBtn && bmrModal) {
+          bmiBtn.addEventListener('click', () => {
+            planTypeText.innerText = "Biometric Analysis: Initializing BMI Scan";
+            bmrModal.style.display = 'block';
+
+            // Modal reset logic
+            bmrResultsWrapper.classList.add('hidden');
+            bmrForm.reset();
+            switchUnit('cm'); // Default CM set kara
+
+            // Mobile scrolling fix
+            setTimeout(() => {
+              const content = bmrModal.querySelector('.nutrition-modal-content');
+              if (content) content.scrollTop = 0;
+            }, 100);
+          });
+        }
+
+        // 3. Close Modal Logic
+        if (bmrClose) {
+          bmrClose.onclick = () => bmrModal.style.display = 'none';
+        }
+
+        window.onclick = (event) => {
+          if (event.target == bmrModal) bmrModal.style.display = 'none';
+        };
+
+        // 4. Handle BMI/BMR Calculation
+        bmrForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const w = parseFloat(document.getElementById('weight').value);
+          const a = parseFloat(document.getElementById('age').value);
+          const g = document.getElementById('gender').value;
+
+          // Height Logic (CM or FT/IN)
+          let h;
+          const cmInput = document.getElementById('height');
+          if (cmInput.style.display !== 'none') {
+            h = parseFloat(cmInput.value);
+          } else {
+            const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+            const inch = parseFloat(document.getElementById('height-in').value) || 0;
+            h = (ft * 30.48) + (inch * 2.54); // Convert to CM
+          }
+
+          if (!h || !w) return alert("Please enter valid height and weight.");
+
+          // Mifflin-St Jeor Formula (BMR)
+          let bmr = (10 * w) + (6.25 * h) - (5 * a);
+          bmr = (g === 'male') ? bmr + 5 : bmr - 161;
+
+          // BMI Calculation
+          const bmi = w / ((h / 100) ** 2);
+
+          // Professional Analysis Logic
+          let cat, clr, adv;
+          if (bmi < 18.5) {
+            cat = 'UNDERWEIGHT';
+            clr = '#3498db';
+            adv = "Your BMI indicates you are in the underweight range. Focus on a high-protein caloric surplus to build healthy lean mass.";
+          } else if (bmi < 24.9) {
+            cat = 'NORMAL WEIGHT';
+            clr = '#2ecc71';
+            adv = "Excellent! You are in the optimal weight range. Continue your current activity levels and balanced nutrition to maintain this peak state.";
+          } else if (bmi < 29.9) {
+            cat = 'OVERWEIGHT';
+            clr = '#f1c40f';
+            adv = "You are slightly above the ideal weight threshold. A structured metabolic reset and consistent cardio can help you reach your goal.";
+          } else {
+            cat = 'OBESE';
+            clr = '#e74c3c';
+            adv = "Your BMI is in the high-risk category. For long-term health, a customized weight-loss protocol and dietary intervention are highly recommended.";
+          }
+
+          // 5. Update UI Results
+          bmrResultsWrapper.classList.remove('hidden');
+          bmrResult.innerHTML = `
+              <div style="font-size: 1.8rem; margin: 10px 0; font-family: 'Orbitron'; color: #6c63ff;">
+                  ${bmr.toFixed(0)} <small style="font-size: 12px; color: #666;">KCAL/DAY</small>
+              </div>
+              <div style="color:${clr}; letter-spacing: 2px; font-weight: 600; font-size: 14px;">
+                  STATUS: ${cat} (${bmi.toFixed(1)})
+              </div>
+          `;
+
+          healthAdvice.innerHTML = `<br><span style="color:${clr}">></span> ${adv}`;
+
+          // BMI Bar Animation
+          const widthPerc = Math.min((bmi / 40) * 100, 100);
+          bmrBar.style.width = widthPerc + '%';
+          bmrBar.style.backgroundColor = clr;
+          bmrBar.style.boxShadow = `0 0 15px ${clr}`;
+
+          // Mobile Auto-Scroll to Results
+          setTimeout(() => {
+            bmrResultsWrapper.scrollIntoView({ behavior: 'smooth', block: 'end' });
+          }, 100);
+        });
+      });
+
+      // 6. Global Switch Unit Function
+      function switchUnit(type) {
+        const cmInput = document.getElementById('height');
+        const ftGroup = document.getElementById('ft-inputs');
+        const btnCm = document.getElementById('toggleCM');
+        const btnFt = document.getElementById('toggleFT');
+
+        if (type === 'cm') {
+          cmInput.style.display = 'block';
+          cmInput.required = true;
+          ftGroup.style.display = 'none';
+          btnCm.classList.add('active-unit');
+          btnFt.classList.remove('active-unit');
+        } else {
+          cmInput.style.display = 'none';
+          cmInput.required = false;
+          ftGroup.style.display = 'flex';
+          btnCm.classList.remove('active-unit');
+          btnFt.classList.add('active-unit');
+        }
+      }
+    </script>
+
+</body>
+
+</html>

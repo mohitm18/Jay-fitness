@@ -1,0 +1,29 @@
+.hero {
+    height: 100vh;
+    background: url('../images/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding: 5%;
+}
+
+.story-img {
+    width: 70%;
+    margin-left: 20%;
+    margin-top: -100px;
+}
+
+.quote-section {
+    position: relative;
+    height: 400px;
+}
+
+.floating-program {
+    position: relative;
+    margin-top: 80px;
+}
+
+.join-hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
