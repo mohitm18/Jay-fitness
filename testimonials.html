@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials | Jay's Nutritionist</title>
+<title>Testimonials | Jay Nutritionist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -11,7 +11,7 @@
 <style>
 /* Hya section sathi garjechi responsive CSS */
 .cards {
-    display: grid;
+    display: block;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     padding: 20px 0;
@@ -64,6 +64,10 @@
     .logo { font-size: 20px; }
     header { flex-direction: column; gap: 15px; text-align: center; }
 }
+
+.elfsight-app-29048336-d229-4e6e-b628-3df4a9d871fb {
+    width: 100%;
+}
 </style>
 </head>
 <body>
@@ -90,39 +94,12 @@
     </div>
   
     <div class="cards">
-        <div class="card testimonial-card">
-            <div class="user-info">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="user-img" alt="Rahul">
-                <div>
-                    <h4 style="margin:0;">Rahul Sharma</h4>
-                    <p class="stars">★★★★★</p>
-                </div>
-            </div>
-            <p class="testimonial-text">"Jay's training techniques are out of this world. The intensity is exactly what I needed!"</p>
-        </div>
-        
-        <div class="card testimonial-card">
-            <div class="user-info">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="user-img" alt="Sneha">
-                <div>
-                    <h4 style="margin:0;">Sneha Patil</h4>
-                    <p class="stars">★★★★★</p>
-                </div>
-            </div>
-            <p class="testimonial-text">"The diet plan was so easy to follow and very effective. Lost 5kg in the first month!"</p>
-        </div>
 
-        <div class="card testimonial-card">
-            <div class="user-info">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="user-img" alt="Karan">
-                <div>
-                    <h4 style="margin:0;">Karan Malhotra</h4>
-                    <p class="stars">★★★★★</p>
-                </div>
-            </div>
-            <p class="testimonial-text">"Best nutritionist in Pune! His scientific approach to body recomposition is amazing."</p>
-        </div>
-    </div>
+      <!-- Elfsight Google Reviews Widget -->
+      <div class="elfsight-app-29048336-d229-4e6e-b628-3df4a9d871fb" data-elfsight-app-lazy></div>
+  
+  </div>
+  
 </section>
 
 <section class="section">
@@ -174,10 +151,14 @@
     <div class="footer-column">
       <h4>Navigation</h4>
       <nav class="footer-nav">
-          <a class="active" href="index.html">Home</a>
-          <a href="workout.html">Training</a>
-          <a href="nutrition.html">Nutrition</a>
-          <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="workout.html">Training</a>
+        <a href="food.html">Food</a>
+        <a href="cloth.html">Clothing</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
 
@@ -191,5 +172,8 @@
   <p class="copy">© 2026 Jay's Nutritionist | All Rights Reserved</p>
 </footer>
 
+
+
+<script src="https://elfsightcdn.com/platform.js" async></script>
 </body>
 </html>
