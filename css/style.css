@@ -372,11 +372,13 @@ footer {
 
 }
 
-.copy {
-  margin-top: 30px;
-  color: #888;
-  font-size: 13px;
-  text-align: center;
+.copy { 
+  margin-top: 10px; 
+  padding-top: 40px;
+  border-top: 1px solid #f4f4f4;
+  color: #999; 
+  font-size: 13px; 
+  text-align: center; 
 }
 
 .footer-nav {
@@ -388,14 +390,16 @@ footer {
 
 }
 
-
-
 .footer-nav a {
   color: #444;
   font-size: 14px;
   position: relative;
   transition: 0.3s;
 
+}
+
+.footer-nav a:hover {
+  color: #6c63ff;
 }
 
 /* Desktop var separator add karnyathi (Last link sodun) */
@@ -409,12 +413,6 @@ footer {
     pointer-events: none;
 
   }
-
-}
-
-.footer-nav a:hover {
-  color: #6c63ff;
-
 }
 
 /* Mobile sathi vertical list kraychi asel tar */
@@ -426,7 +424,6 @@ footer {
     align-items: center;
 
   }
-
 }
 
 /* ===== 6. MEDIA QUERIES (Mobile Fixes) ===== */
