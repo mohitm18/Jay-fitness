@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food | Jay Nutritionist</title>
     <link rel="stylesheet" href="css/style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.jpeg">
     <style>
         /* --- EXISTING STYLES --- */
         .coming-soon-banner {
@@ -26,8 +24,6 @@
         }
 
         /* --- NEW RESPONSIVE OVERRIDES --- */
-
-        /* 1. Header Responsive */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -45,13 +41,35 @@
                 margin: 5px !important;
                 font-size: 13px;
             }
+            
+            /* Combined Elite Pass Mobile Responsiveness Fixed */
+            .combo-benefits-row {
+                flex-direction: column !important;
+            }
+            
+            .combo-price-panel {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 25px 20px !important;
+            }
+            
+            .combo-price-panel div {
+                text-align: center !important;
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+            
+            .combo-price-panel .sub-btn {
+                width: 100% !important;
+                text-align: center !important;
+                padding: 15px 0 !important;
+                margin-top: 10px !important;
+            }
         }
 
-        /* 2. Grid System (Desktop: 2 Columns, Mobile: 1 Column) */
         .cards {
             display: grid;
-            /* Laptop/Desktop var 2 cards show honyasathi minmax adjust kela aahe */
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
@@ -59,12 +77,10 @@
         @media (max-width: 500px) {
             .cards {
                 grid-template-columns: 1fr;
-                /* Pure mobile var 1 card dhisel */
             }
 
             .food-item div[style*="height: 280px"] {
                 height: 220px !important;
-                /* Mobile var image chi height thodi kami */
             }
 
             h2 {
@@ -72,11 +88,20 @@
             }
         }
 
-        /* 3. Macros Dashboard Fix (Mobile var break hou naye mhanun) */
+        /* Responsive Macros Dashboard Fix */
         .macro-container {
             display: flex;
             gap: 10px;
             margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .macro-box {
+            flex: 1; 
+            text-align: center; 
+            padding: 12px; 
+            border-radius: 15px; 
+            min-width: 70px;
         }
 
         @media (max-width: 400px) {
@@ -84,16 +109,16 @@
                 gap: 5px;
             }
 
-            .macro-container div {
+            .macro-box {
                 padding: 8px 4px !important;
+                min-width: 60px;
             }
 
-            .macro-container span[style*="font-size: 15px"] {
+            .macro-box span[id*="-"] {
                 font-size: 12px !important;
             }
         }
 
-        /* 4. Button & Price Responsive */
         @media (max-width: 480px) {
             .order-footer {
                 flex-direction: column;
@@ -113,31 +138,193 @@
         }
 
         .horizontal-food-card:hover {
-            border-color: #6c63ff;
-            box-shadow: 0 30px 60px rgba(108, 99, 255, 0.15);
+            border-color: #6c63ff !important;
+            box-shadow: 0 30px 60px rgba(108, 99, 255, 0.15) !important;
         }
 
-        /* PREMIUM HOVER EFFECTS */
         .sub-btn:hover {
             background: #6c63ff !important;
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3) !important;
         }
 
-        @media (max-width: 768px) {
-            .monthly-exclusive div {
-                text-align: center !important;
-                padding-left: 0 !important;
+        /* Custom Flex Grid for Layout */
+        .food-grid-flex {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .horizontal-food-card {
+            display: flex;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            text-align: left;
+            transition: 0.4s ease;
+            min-height: 380px;
+        }
+
+        .food-img-side {
+            width: 42%;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+            transition: 0.5s ease;
+        }
+
+        .horizontal-food-card:hover .food-img-side {
+            transform: scale(1.03);
+        }
+
+        .food-content-side {
+            width: 58%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tier-btn {
+            flex: 1; 
+            padding: 10px; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+            background: #fff; 
+            cursor: pointer; 
+            text-align: center; 
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 1200px) {
+            .food-grid-flex {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .horizontal-food-card {
+                flex-direction: column;
+                min-height: auto;
             }
 
-            .monthly-exclusive h2 {
-                font-size: 2rem !important;
-            }
-
-            .sub-btn {
+            .food-img-side {
                 width: 100%;
+                height: 230px;
+            }
+
+            .food-content-side {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .food-content-side .btn-glow-fixed {
+                width: 100% !important;
+                padding: 14px 0 !important;
+                font-size: 14px !important;
+                margin-top: 15px !important;
+            }
+
+            .order-footer-flex {
+                flex-direction: column !important;
+                gap: 10px;
                 text-align: center;
             }
+        }
+
+        .price {
+            transition: all 0.2s ease;
+        }
+
+        .price:hover {
+            transform: scale(1.10);
+            display: inline-block;
+        }
+
+        /* ==================== POPUP / MODAL STYLES ==================== */
+        .order-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            animation: slideIn 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        .modal-form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .modal-form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .modal-form-group input, .modal-form-group textarea, .modal-form-group select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            background: #f8f9ff;
+        }
+
+        .modal-form-group input:focus, .modal-form-group textarea:focus, .modal-form-group select:focus {
+            outline: none;
+            border-color: #6c63ff;
         }
     </style>
 </head>
@@ -151,7 +338,7 @@
             <a href="nutrition.html">Nutrition</a>
             <a href="workout.html">Training</a>
             <a class="active" href="food.html">Food</a>
-            <a href="cloth.html">Clothing</a>
+            <a href="product.html">Products</a>
             <a href="gallery.html">Gallery</a>
             <a href="testimonials.html">Testimonials</a>
             <a href="contact.html">Contact</a>
@@ -159,113 +346,331 @@
     </header>
 
     <section class="section hero-future" style="text-align:center; padding: 80px 5%; background: #fdfdff;">
-        <span class="hub-badge">Fresh & Healthy Meal Delivery</span> 
+        <div style="width: 100%; max-width: 1300px; height: 320px; margin: 0 auto 30px auto; position: relative; overflow: hidden; border-radius: 25px; box-shadow: 0 20px 45px rgba(108,99,255,0.15); background: #000; display: flex; align-items: center; justify-content: center;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/images/logo.jpeg'); background-size: cover; background-position: center; filter: blur(8px); opacity: 0.35; z-index: 1; pointer-events: none;"></div>
+            <div style="position: relative; z-index: 2; height: 100%; max-width: 100%; display: flex; align-items: center; justify-content: center;">
+                <img src="assets/images/logo.jpeg" alt="Nutrique Co. Logo" style="height: 100%; width: auto; max-height: 280px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: block; object-fit: contain;">
+            </div>
+        </div>
         
         <h2 style="font-family: 'Orbitron'; margin-top: 25px; font-size: 2.8rem;">Fuel Your Body</h2>
-        <p
-            style="margin-top:15px; color:#666; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
-            Scientifically designed meals delivered to your doorstep in Pune. Optimized for high protein and
-            performance.</p>
+        <p style="margin-top:15px; color:#666; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
+            Scientifically designed meals delivered to your doorstep in Pune. Optimized for high protein and performance.
+        </p>
 
-        <style>
-            .food-grid-flex {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                /* Laptop var 2 columns */
-                gap: 40px;
-                /* Gap vadhavla aahe */
-                margin-top: 60px;
-                max-width: 1300px;
-                /* Container motha kela aahe */
-                margin-left: auto;
-                margin-right: auto;
-            }
+        <h3 style="font-family: 'Orbitron'; margin-top: 50px; font-size: 2rem; color: #6c63ff; text-transform: uppercase; letter-spacing: 1px;">Premium Macro Meals</h3>
+        <p style="color:#777; font-size: 0.95rem; margin-bottom: -20px;">Customizable protein levels and precision scientific tracking.</p>
+        
+        <div class="food-grid-flex">
 
-            .horizontal-food-card {
-                display: flex;
-                background: #fff;
-                border-radius: 30px;
-                /* Corners thode m मऊ (Smooth) kele aahet */
-                overflow: hidden;
-                box-shadow: 0 25px 55px rgba(0, 0, 0, 0.1);
-                /* Shadow thodi deep keli aahe */
-                border: 1px solid #eee;
-                text-align: left;
-                transition: 0.4s ease;
-                min-height: 350px;
-                /* Height vadhavli aahe */
-            }
+            <article class="horizontal-food-card" id="classic-chicken-card">
+                <div class="food-img-side" style="background-image: url('assets/images/food20.jpeg');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #eef2ff; color: #6c63ff; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🔥 CUSTOMIZABLE MACROS</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Classic Chicken Bowl</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">Comforting chicken gravy served over a bed of wholesome brown rice, accompanied by a refreshing side salad.</p>
 
-            .food-img-side {
-                width: 45%;
-                /* Image chi width vadhavli aahe */
-                background-size: cover;
-                background-position: center;
-                flex-shrink: 0;
-                transition: 0.5s ease;
-            }
+                        <div style="margin-bottom: 15px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #555; display: block; margin-bottom: 6px;">SELECT YOUR PLAN TIER:</span>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'classic-chicken', '₹209', '413 kcal', '32g', '45g', '12g', 'Classic Chicken Bowl (Regular V1)', 'assets/images/f13.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Regular</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹209</span>
+                                </button>
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'classic-chicken', '₹259', '430 kcal', '48g', '60g', '14g', 'Classic Chicken Bowl (Pro V2)', 'assets/images/f3.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹259</span>
+                                </button>
+                                <button type="button" class="tier-btn price" data-active="true" onclick="updateMealPortion(this, 'classic-chicken', '₹329', '588 kcal', '60g', '70g', '16g', 'Classic Chicken Bowl (Max Protein)', 'assets/images/f19.jpeg')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Max Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹329</span>
+                                </button>
+                            </div>
+                        </div>
 
-            .horizontal-food-card:hover .food-img-side {
-                transform: scale(1.05);
-                /* Image zoom effect */
-            }
+                        <div class="macro-container">
+                            <div class="macro-box" style="background: #fff4e5; border: 1px solid #ffe8cc;">
+                                <span style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
+                                <span id="classic-chicken-cals" style="font-weight: 700; font-size: 14px;">588 kcal</span>
+                            </div>
+                            <div class="macro-box" style="background: #e7fcf3; border: 1px solid #c3f0d9;">
+                                <span style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
+                                <span id="classic-chicken-pro" style="font-weight: 700; font-size: 14px;">60g</span>
+                            </div>
+                            <div class="macro-box" style="background: #eef2ff; border: 1px solid #d0d7ff;">
+                                <span style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
+                                <span id="classic-chicken-carb" style="font-weight: 700; font-size: 14px;">70g</span>
+                            </div>
+                            <div class="macro-box" style="background: #fff0f0; border: 1px solid #ffdcdc;">
+                                <span style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
+                                <span id="classic-chicken-fat" style="font-weight: 700; font-size: 14px;">16g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span id="classic-chicken-price" style="font-size: 24px; font-weight: 800; color: #111;">₹329</span>
+                        <button id="classic-chicken-btn" onclick="openOrderModal('Classic Chicken Bowl (Max Protein)', '₹329', 'nonveg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
 
-            .food-content-side {
-                width: 55%;
-                padding: 35px;
-                /* Padding vadhavli aahe */
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
+            <article class="horizontal-food-card" id="pom-chicken-card">
+                <div class="food-img-side" style="background-image: url('assets/images/food16.png');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #fff0f0; color: #e74c3c; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🥗 SHRED & CUT</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Pomegranate Chicken Salad</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">Fresh garden greens, tender grilled chicken breast, sweet antioxidant pomegranate seeds, and curated curd mixture.</p>
 
-            /* Mobile Responsive Fix */
-            @media (max-width: 1200px) {
-                .food-grid-flex {
-                    grid-template-columns: 1fr;
-                    max-width: 700px;
-                }
-            }
+                        <div style="margin-bottom: 15px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #555; display: block; margin-bottom: 6px;">SELECT YOUR PLAN TIER:</span>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'pom-chicken', '₹229', '330 kcal', '32g', '22g', '12g', 'Pomegranate Chicken Salad (Regular V1)', 'assets/images/food16.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Regular</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹229</span>
+                                </button>
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'pom-chicken', '₹289', '376 kcal', '44g', '29g', '16g', 'Pomegranate Chicken Salad (Pro V2)', 'assets/images/food16.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹289</span>
+                                </button>
+                                <button type="button" class="tier-btn price" data-active="true" onclick="updateMealPortion(this, 'pom-chicken', '₹379', '510 kcal', '58g', '32g', '18g', 'Pomegranate Chicken Salad (Max Protein)', 'assets/images/f16.jpeg')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Max Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹379</span>
+                                </button>
+                            </div>
+                        </div>
 
-            @media (max-width: 600px) {
-                .horizontal-food-card {
-                    flex-direction: column;
-                    min-height: auto;
-                }
+                        <div class="macro-container">
+                            <div class="macro-box" style="background: #fff4e5; border: 1px solid #ffe8cc;">
+                                <span style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
+                                <span id="pom-chicken-cals" style="font-weight: 700; font-size: 14px;">510 kcal</span>
+                            </div>
+                            <div class="macro-box" style="background: #e7fcf3; border: 1px solid #c3f0d9;">
+                                <span style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
+                                <span id="pom-chicken-pro" style="font-weight: 700; font-size: 14px;">58g</span>
+                            </div>
+                            <div class="macro-box" style="background: #eef2ff; border: 1px solid #d0d7ff;">
+                                <span style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
+                                <span id="pom-chicken-carb" style="font-weight: 700; font-size: 14px;">29g</span>
+                            </div>
+                            <div class="macro-box" style="background: #fff0f0; border: 1px solid #ffdcdc;">
+                                <span style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
+                                <span id="pom-chicken-fat" style="font-weight: 700; font-size: 14px;">18g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span id="pom-chicken-price" style="font-size: 24px; font-weight: 800; color: #111;">₹379</span>
+                        <button id="pom-chicken-btn" onclick="openOrderModal('Pomegranate Chicken Salad (Max Protein)', '₹379', 'nonveg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
 
-                .food-img-side {
-                    width: 100%;
-                    height: 250px;
-                }
+            <article class="horizontal-food-card" id="paneer-bowl-card">
+                <div class="food-img-side" style="background-image: url('assets/images/food19.jpeg');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #fff4e5; color: #ff9800; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🌿 VEG COMFORT</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Paneer Comfort Bowl</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">Thoughtfully prepared veg macro bowl with rich paneer cubes, nutritious brown rice, and healthy custom sauces.</p>
 
-                .food-content-side {
-                    width: 100%;
-                    padding: 25px;
-                }
-            }
+                        <div style="margin-bottom: 15px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #555; display: block; margin-bottom: 6px;">SELECT YOUR PLAN TIER:</span>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'paneer-bowl', '₹199', '318 kcal', '30g', '50g', '12g', 'Paneer Comfort Bowl (Regular V1)', 'assets/images/f14.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Regular</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹199</span>
+                                </button>
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'paneer-bowl', '₹239', '422 kcal', '44g', '60g', '12g', 'Paneer Comfort Bowl (Pro V2)', 'assets/images/f15.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹239</span>
+                                </button>
+                                <button type="button" class="tier-btn price" data-active="true" onclick="updateMealPortion(this, 'paneer-bowl', '₹309', '558 kcal', '56g', '74g', '16g', 'Paneer Comfort Bowl (Max Protein)', 'assets/images/f4.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Max Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹309</span>
+                                </button>
+                            </div>
+                        </div>
 
-            /* --- Order Now Button Mobile Fix --- */
-            @media (max-width: 600px) {
+                        <div class="macro-container">
+                            <div class="macro-box" style="background: #fff4e5; border: 1px solid #ffe8cc;">
+                                <span style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
+                                <span id="paneer-bowl-cals" style="font-weight: 700; font-size: 14px;">558 kcal</span>
+                            </div>
+                            <div class="macro-box" style="background: #e7fcf3; border: 1px solid #c3f0d9;">
+                                <span style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
+                                <span id="paneer-bowl-pro" style="font-weight: 700; font-size: 14px;">38g</span>
+                            </div>
+                            <div class="macro-box" style="background: #eef2ff; border: 1px solid #d0d7ff;">
+                                <span style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
+                                <span id="paneer-bowl-carb" style="font-weight: 700; font-size: 14px;">61g</span>
+                            </div>
+                            <div class="macro-box" style="background: #fff0f0; border: 1px solid #ffdcdc;">
+                                <span style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
+                                <span id="paneer-bowl-fat" style="font-weight: 700; font-size: 14px;">18g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span id="paneer-bowl-price" style="font-size: 24px; font-weight: 800; color: #111;">₹309</span>
+                        <button id="paneer-bowl-btn" onclick="openOrderModal('Paneer Comfort Bowl (Max Protein)', '₹309', 'veg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
 
-                /* Button chi width automatic content nusar set karnyathi */
-                .food-content-side .btn-glow-fixed {
-                    width: max-content !important;
-                    padding: 10px 25px !important;
-                    font-size: 12px !important;
-                    align-self: center;
-                    /* Button center la hovun jail */
-                    margin-top: 15px !important;
-                }
+            <article class="horizontal-food-card" id="paneer-salad-card">
+                <div class="food-img-side" style="background-image: url('assets/images/vegFood.webp');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #e7fcf3; color: #27ae60; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🌿 VEG SPECIAL</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Paneer Pomegranate Salad</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">Fresh premium cottage cheese cubes, loaded greens, crisp cucumbers, and handpicked pomegranate seeds.</p>
 
-                /* Price ani Button la vertical center karnyathi */
-                .order-footer,
-                .food-content-side div[style*="display: flex; justify-content: space-between"] {
-                    flex-direction: column !important;
-                    gap: 10px;
-                    text-align: center;
-                }
-            }
-        </style>
+                        <div style="margin-bottom: 15px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #555; display: block; margin-bottom: 6px;">SELECT YOUR PLAN TIER:</span>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'paneer-salad', '₹219', '276 kcal', '30g', '29g', '14g', 'Paneer Pomegranate Salad (Regular V1)', 'assets/images/vegFood.webp')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Regular</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹219</span>
+                                </button>
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'paneer-salad', '₹279', '288 kcal', '42g', '29g', '14g', 'Paneer Pomegranate Salad (Pro V2)', 'assets/images/f17.jpeg')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹279</span>
+                                </button>
+                                <button type="button" class="tier-btn price" data-active="true" onclick="updateMealPortion(this, 'paneer-salad', '₹359', '410 kcal', '56g', '36g', '16g', 'Paneer Pomegranate Salad (Max Protein)', 'assets/images/f12.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Max Pro</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹359</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="macro-container">
+                            <div class="macro-box" style="background: #fff4e5; border: 1px solid #ffe8cc;">
+                                <span style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
+                                <span id="paneer-salad-cals" style="font-weight: 700; font-size: 14px;">410 kcal</span>
+                            </div>
+                            <div class="macro-box" style="background: #e7fcf3; border: 1px solid #c3f0d9;">
+                                <span style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
+                                <span id="paneer-salad-pro" style="font-weight: 700; font-size: 14px;">46g</span>
+                            </div>
+                            <div class="macro-box" style="background: #eef2ff; border: 1px solid #d0d7ff;">
+                                <span style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
+                                <span id="paneer-salad-carb" style="font-weight: 700; font-size: 14px;">31g</span>
+                            </div>
+                            <div class="macro-box" style="background: #fff0f0; border: 1px solid #ffdcdc;">
+                                <span style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
+                                <span id="paneer-salad-fat" style="font-weight: 700; font-size: 14px;">10g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span id="paneer-salad-price" style="font-size: 24px; font-weight: 800; color: #111;">₹359</span>
+                        <button id="paneer-salad-btn" onclick="openOrderModal('Paneer Pomegranate Salad (Max Protein)', '₹359', 'veg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="horizontal-food-card" id="herb-chicken-card">
+                <div class="food-img-side" style="background-image: url('assets/images/f2.png');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #eef2ff; color: #6c63ff; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🍗 TRADITIONAL FITNESS THALI</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Herb Chicken Thali</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">Authentic black chicken gravy (Kala Rassa) served with fiber-rich millet bhakri and garden fresh salad.</p>
+
+                        <div style="margin-bottom: 15px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #555; display: block; margin-bottom: 6px;">SELECT YOUR PLAN TIER:</span>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'herb-chicken', '₹269', '424 kcal', '46g', '55g', '12g', 'Herb Chicken Thali (Pro)', 'assets/images/f10.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Pro Thali</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹269</span>
+                                </button>
+                                <button type="button" class="tier-btn price" data-active="true" onclick="updateMealPortion(this, 'herb-chicken', '₹349', '560 kcal', '62g', '55g', '16g', 'Herb Chicken Thali (Max Premium)', 'assets/images/f2.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Premium</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹349</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="macro-container">
+                            <div class="macro-box" style="background: #fff4e5; border: 1px solid #ffe8cc;">
+                                <span style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
+                                <span id="herb-chicken-cals" style="font-weight: 700; font-size: 14px;">560 kcal</span>
+                            </div>
+                            <div class="macro-box" style="background: #e7fcf3; border: 1px solid #c3f0d9;">
+                                <span style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
+                                <span id="herb-chicken-pro" style="font-weight: 700; font-size: 14px;">62g</span>
+                            </div>
+                            <div class="macro-box" style="background: #eef2ff; border: 1px solid #d0d7ff;">
+                                <span style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
+                                <span id="herb-chicken-carb" style="font-weight: 700; font-size: 14px;">55g</span>
+                            </div>
+                            <div class="macro-box" style="background: #fff0f0; border: 1px solid #ffdcdc;">
+                                <span style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
+                                <span id="herb-chicken-fat" style="font-weight: 700; font-size: 14px;">16g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span id="herb-chicken-price" style="font-size: 24px; font-weight: 800; color: #111;">₹349</span>
+                        <button id="herb-chicken-btn" onclick="openOrderModal('Herb Chicken Thali (Max Premium)', '₹349', 'nonveg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="horizontal-food-card" id="herb-paneer-card">
+                <div class="food-img-side" style="background-image: url('assets/images/f5.png');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #e7fcf3; color: #27ae60; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🌿 VEG DIET DELUXE</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Herb Paneer Thali</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">Soft paneer cubes cooked in savory herb gravy, paired with rustic millet bhakri and high-fiber side salad.</p>
+
+                        <div style="margin-bottom: 15px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #555; display: block; margin-bottom: 6px;">SELECT YOUR PLAN TIER:</span>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button type="button" class="tier-btn price" onclick="updateMealPortion(this, 'herb-paneer', '₹259', '440 kcal', '44g', '56g', '16g', 'Herb Paneer Thali (Pro Thali)', 'assets/images/f7.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Pro Thali</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹259</span>
+                                </button>
+                                <button type="button" class="tier-btn price" data-active="true" onclick="updateMealPortion(this, 'herb-paneer', '₹319', '564 kcal', '56g', '56g', '20g', 'Herb Paneer Thali (Max Premium)', 'assets/images/f5.png')">
+                                    <span style="display: block; font-size: 11px; font-weight: 800;">Premium</span>
+                                    <span style="font-size: 12px; font-weight: 700;">₹319</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="macro-container">
+                            <div class="macro-box" style="background: #fff4e5; border: 1px solid #ffe8cc;">
+                                <span style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
+                                <span id="herb-paneer-cals" style="font-weight: 700; font-size: 14px;">564 kcal</span>
+                            </div>
+                            <div class="macro-box" style="background: #e7fcf3; border: 1px solid #c3f0d9;">
+                                <span style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
+                                <span id="herb-paneer-pro" style="font-weight: 700; font-size: 14px;">56g</span>
+                            </div>
+                            <div class="macro-box" style="background: #eef2ff; border: 1px solid #d0d7ff;">
+                                <span style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
+                                <span id="herb-paneer-carb" style="font-weight: 700; font-size: 14px;">56g</span>
+                            </div>
+                            <div class="macro-box" style="background: #fff0f0; border: 1px solid #ffdcdc;">
+                                <span style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
+                                <span id="herb-paneer-fat" style="font-weight: 700; font-size: 14px;">20g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span id="herb-paneer-price" style="font-size: 24px; font-weight: 800; color: #111;">₹319</span>
+                        <button id="herb-paneer-btn" onclick="openOrderModal('Herb Paneer Thali (Max Premium)', '₹319', 'veg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <h3 style="font-family: 'Orbitron'; margin-top: 90px; font-size: 2rem; color: #444; text-transform: uppercase; letter-spacing: 1px; border-top: 2px dashed #e2e8f0; padding-top: 60px;">Normal Meals</h3>
+        <p style="color:#777; font-size: 0.95rem; margin-bottom: -20px;">Everyday delicious healthy comfort food at budget-friendly pricing.</p>
 
         <div class="food-grid-flex">
 
@@ -273,200 +678,193 @@
                 <div class="food-img-side" style="background-image: url('assets/images/food11.webp');"></div>
                 <div class="food-content-side">
                     <div>
-                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Black Chicken
-                            Gravy</h4>
-                        <p style="font-size: 15px; color: #777; margin: 15px 0 20px 0; line-height: 1.6;">Authentic
-                            Maharashtrian Kala Rassa with Bajra Roti & fresh Salad. A perfect high-protein traditional
-                            meal.</p>
+                        <div style="background: #ffebeb; color: #e74c3c; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🍗 NORMAL NON-VEG</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Chicken Thali</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 20px 0; line-height: 1.6;">Traditional style high protein chicken platter engineered for a perfect, wholesome everyday clean lunch or dinner experience.</p>
 
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <div
-                                style="flex: 1; background: #fff4e5; text-align: center; padding: 12px; border-radius: 15px; border: 1px solid #ffe8cc; min-width: 70px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
-                                <span style="font-weight: 700; font-size: 15px;">640</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #e7fcf3; text-align: center; padding: 12px; border-radius: 15px; border: 1px solid #c3f0d9; min-width: 70px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
-                                <span style="font-weight: 700; font-size: 15px;">43g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #eef2ff; text-align: center; padding: 12px; border-radius: 15px; border: 1px solid #d0d7ff; min-width: 70px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
-                                <span style="font-weight: 700; font-size: 15px;">54g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #fff0f0; text-align: center; padding: 12px; border-radius: 15px; border: 1px solid #ffdcdc; min-width: 70px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
-                                <span style="font-weight: 700; font-size: 15px;">28g</span>
-                            </div>
+                        <div style="background: #fff8f8; border: 1px solid #ffdcdc; border-radius: 15px; padding: 15px; text-align: left; margin-bottom: 25px;">
+                            <span style="display: block; font-size: 10px; color: #e74c3c; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">🥗 Included Ingredients:</span>
+                            <span style="font-size: 13px; font-weight: 500; color: #444; line-height: 1.5; display: block;">• Premium Breast Chicken Gravy<br>• 1 Millet Roti (Pure Organic Jowar / Bajra)</span>
                         </div>
                     </div>
-
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 20px;">
-                        <span style="font-size: 26px; font-weight: 800; color: #111;">₹349</span>
-                        <a href="contact.html?food=Black Chicken Gravy" class="btn-glow-fixed"
-                            style="width: auto; padding: 14px 35px; margin: 0; font-size: 14px; background: #111; color: #fff;">Order
-                            Now</a>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span style="font-size: 24px; font-weight: 800; color: #111;">₹199</span>
+                        <button onclick="openOrderModal('Chicken Thali (Normal Meal)', '₹199', 'nonveg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #e74c3c; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
                     </div>
                 </div>
             </article>
 
             <article class="horizontal-food-card">
-                <div class="food-img-side" style="background-image: url('assets/images/food12.webp');"></div>
+                <div class="food-img-side" style="background-image: url('assets/images/vegthali.jpeg');"></div>
                 <div class="food-content-side">
                     <div>
-                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Chicken Rice
-                            Bowl</h4>
-                        <p style="font-size: 15px; color: #777; margin: 15px 0 20px 0; line-height: 1.6;">Scientifically
-                            balanced steamed chicken rice bowl with fiber-rich green salad. Ideal for steady energy.</p>
+                        <div style="background: #e7fcf3; color: #27ae60; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🌿 NORMAL VEG</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Paneer Thali</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 20px 0; line-height: 1.6;">Soft paneer blocks gently cooked in a standard authentic curry base, perfectly balanced to hit your regular calorie brackets smoothly.</p>
 
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <div
-                                style="flex: 1; background: #fff4e5; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALORIES</span>
-                                <span style="font-weight: 700; font-size: 15px;">566</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #e7fcf3; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PROTEIN</span>
-                                <span style="font-weight: 700; font-size: 15px;">41g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #eef2ff; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARBS</span>
-                                <span style="font-weight: 700; font-size: 15px;">51g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #fff0f0; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FATS</span>
-                                <span style="font-weight: 700; font-size: 15px;">22g</span>
-                            </div>
+                        <div style="background: #f4fdf8; border: 1px solid #c3f0d9; border-radius: 15px; padding: 15px; text-align: left; margin-bottom: 25px;">
+                            <span style="display: block; font-size: 10px; color: #27ae60; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">🥗 Included Ingredients:</span>
+                            <span style="font-size: 13px; font-weight: 500; color: #444; line-height: 1.5; display: block;">• Fresh Paneer Gravy Base<br>• 1 Millet Roti (Pure Organic Jowar / Bajra)</span>
                         </div>
                     </div>
-
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 20px;">
-                        <span style="font-size: 26px; font-weight: 800; color: #111;">₹349</span>
-                        <a href="contact.html?food=Chicken Rice Bowl" class="btn-glow-fixed"
-                            style="width: auto; padding: 14px 35px; margin: 0; font-size: 14px; background: #111; color: #fff;">Order
-                            Now</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="horizontal-food-card" style="border: 2px solid #6c63ff;">
-                <div class="food-img-side" style="background-image: url('assets/images/food13.webp');"></div>
-                <div class="food-content-side">
-                    <div>
-                        <div
-                            style="background: #efefff; color: #6c63ff; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">
-                            🔥 BEST FOR CUTTING</div>
-                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Chicken
-                            Pomegranate</h4>
-                        <p style="font-size: 15px; color: #777; margin: 5px 0 20px 0; line-height: 1.6;">Refreshing
-                            high-protein mix with creamy curd and ruby pomegranate seeds. Muscle repair focus.</p>
-
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <div
-                                style="flex: 1; background: #fff4e5; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALS</span>
-                                <span style="font-weight: 700; font-size: 15px;">421</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #e7fcf3; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PRO</span>
-                                <span style="font-weight: 700; font-size: 15px;">42g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #eef2ff; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARB</span>
-                                <span style="font-weight: 700; font-size: 15px;">25g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #fff0f0; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FAT</span>
-                                <span style="font-weight: 700; font-size: 15px;">17g</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 20px;">
-                        <span style="font-size: 26px; font-weight: 800; color: #111;">₹349</span>
-                        <a href="contact.html?food=Chicken Pomegranate Curd" class="btn-glow-fixed"
-                            style="width: auto; padding: 14px 35px; margin: 0; font-size: 14px; background: #6c63ff; color: #fff;">Order
-                            Now</a>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span style="font-size: 24px; font-weight: 800; color: #111;">₹189</span>
+                        <button onclick="openOrderModal('Paneer Thali (Normal Meal)', '₹189', 'veg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #27ae60; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
                     </div>
                 </div>
             </article>
 
             <article class="horizontal-food-card">
-                <div class="food-img-side" style="background-image: url('assets/images/vegFood.webp');"></div>
+                <div class="food-img-side" style="background-image: url('assets/images/food20.jpeg');"></div>
                 <div class="food-content-side">
                     <div>
-                        <div
-                            style="background: #e7fcf3; color: #27ae60; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">
-                            🌿 VEG SPECIAL</div>
-                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Paneer
-                            Pomegranate</h4>
-                        <p style="font-size: 15px; color: #777; margin: 5px 0 20px 0; line-height: 1.6;">Vegetarian
-                            protein source with fresh Paneer cubes and leafy greens. Clean and lean nutrition.</p>
+                        <div style="background: #ffebeb; color: #e74c3c; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🍲 REGULAR BOWL</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Chicken Regular Bowl</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 20px 0; line-height: 1.6;">The ultimate, classic time-saving protein bowl designed beautifully for working fitness professional requirements.</p>
 
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <div
-                                style="flex: 1; background: #fff4e5; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #ff9800; font-weight: 800;">CALS</span>
-                                <span style="font-weight: 700; font-size: 15px;">345</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #e7fcf3; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #27ae60; font-weight: 800;">PRO</span>
-                                <span style="font-weight: 700; font-size: 15px;">28g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #eef2ff; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #6c63ff; font-weight: 800;">CARB</span>
-                                <span style="font-weight: 700; font-size: 15px;">29g</span>
-                            </div>
-                            <div
-                                style="flex: 1; background: #fff0f0; text-align: center; padding: 12px; border-radius: 15px;">
-                                <span
-                                    style="display: block; font-size: 9px; color: #e74c3c; font-weight: 800;">FAT</span>
-                                <span style="font-weight: 700; font-size: 15px;">13g</span>
-                            </div>
+                        <div style="background: #fff8f8; border: 1px solid #ffdcdc; border-radius: 15px; padding: 15px; text-align: left; margin-bottom: 25px;">
+                            <span style="display: block; font-size: 10px; color: #e74c3c; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">🍲 Included Ingredients:</span>
+                            <span style="font-size: 13px; font-weight: 500; color: #444; line-height: 1.5; display: block;">• Flavorful Chicken Gravy Core<br>• Premium Fluffy Steamed White Rice</span>
                         </div>
                     </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span style="font-size: 24px; font-weight: 800; color: #111;">₹159</span>
+                        <button onclick="openOrderModal('Chicken Regular Bowl', '₹159', 'nonveg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
 
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 20px;">
-                        <span style="font-size: 26px; font-weight: 800; color: #111;">₹349</span>
-                        <a href="contact.html?food=Paneer Pomegranate Salad" class="btn-glow-fixed"
-                            style="width: auto; padding: 14px 35px; margin: 0; font-size: 14px; background: #111; color: #fff;">Order
-                            Now</a>
+            <article class="horizontal-food-card">
+                <div class="food-img-side" style="background-image: url('assets/images/food19.jpeg');"></div>
+                <div class="food-content-side">
+                    <div>
+                        <div style="background: #e7fcf3; color: #27ae60; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 10px; font-weight: 800; margin-bottom: 10px;">🌿 REGULAR BOWL</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Paneer Regular Bowl</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 20px 0; line-height: 1.6;">Savory cottage cheese cubes tossed in rich spice aromatics gravy served gracefully with long-grain premium white rice.</p>
+
+                        <div style="background: #f4fdf8; border: 1px solid #c3f0d9; border-radius: 15px; padding: 15px; text-align: left; margin-bottom: 25px;">
+                            <span style="display: block; font-size: 10px; color: #27ae60; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">🍲 Included Ingredients:</span>
+                            <span style="font-size: 13px; font-weight: 500; color: #444; line-height: 1.5; display: block;">• Rich Paneer Gravy Composition<br>• Premium Fluffy Steamed White Rice</span>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span style="font-size: 24px; font-weight: 800; color: #111;">₹149</span>
+                        <button onclick="openOrderModal('Paneer Regular Bowl', '₹149', 'veg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Order Now</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <h3 style="font-family: 'Orbitron'; margin-top: 90px; font-size: 2rem; color: #27ae60; text-transform: uppercase; letter-spacing: 1px; border-top: 2px dashed #e2e8f0; padding-top: 60px;">Monthly Meal Subscription</h3>
+        <p style="color:#777; font-size: 0.95rem; margin-bottom: -20px;">Eat Clean. Stay Fit. Feel Great. Order anytime during your active subscription!</p>
+
+        <div class="food-grid-flex">
+            <article class="horizontal-food-card" style="border: 2px solid #e74c3c;">
+                <div class="food-img-side" style="background-image: url('assets/images/food20.jpeg');"></div>
+                <div class="food-content-side" style="background: #fffcfc;">
+                    <div>
+                        <div style="background: #e74c3c; color: #fff; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 11px; font-weight: 800; margin-bottom: 10px; font-family: 'Orbitron';">🍗 10 MEALS / MONTH</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Non-Veg Subscription</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">High Protein | Fresh Ingredients | Balanced Nutrition | Taste You Love. Perfect for consistency.</p>
+                        
+                        <div style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                            <span style="text-decoration: line-through; color: #aaa; font-weight: 500;">Regular Price: ₹3,790</span>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #ffdcdc; padding-top: 15px;">
+                        <div>
+                            <span style="font-size: 24px; font-weight: 800; color: #e74c3c;">₹3,290</span>
+                            <small style="display:block; font-size:10px; color:#aaa; font-weight:600;">OFFER PRICE</small>
+                        </div>
+                        <button onclick="openOrderModal('Monthly Non-Veg Subscription (10 Meals)', '₹3290', 'nonveg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #e74c3c; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-family: 'Orbitron';">Subscribe Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="horizontal-food-card" style="border: 2px solid #27ae60;">
+                <div class="food-img-side" style="background-image: url('assets/images/food19.jpeg');"></div>
+                <div class="food-content-side" style="background: #fdfdfc;">
+                    <div>
+                        <div style="background: #27ae60; color: #fff; display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 11px; font-weight: 800; margin-bottom: 10px; font-family: 'Orbitron';">🌿 10 MEALS / MONTH</div>
+                        <h4 style="margin: 0; color: #111; font-size: 1.6rem; font-family: 'Orbitron';">Veg Subscription</h4>
+                        <p style="font-size: 14px; color: #777; margin: 10px 0 15px 0; line-height: 1.6;">100% Vegetarian | Nutritious & Wholesome | Clean Ingredients | Deliciously Healthy Platter.</p>
+                        
+                        <div style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                            <span style="text-decoration: line-through; color: #aaa; font-weight: 500;">Regular Price: ₹3,590</span>
+                        </div>
+                    </div>
+                    <div class="order-footer-flex" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #c3f0d9; padding-top: 15px;">
+                        <div>
+                            <span style="font-size: 24px; font-weight: 800; color: #27ae60;">₹3,090</span>
+                            <small style="display:block; font-size:10px; color:#aaa; font-weight:600;">OFFER PRICE</small>
+                        </div>
+                        <button onclick="openOrderModal('Monthly Veg Subscription (10 Meals)', '₹3090', 'veg')" class="btn-glow-fixed" style="width: auto; padding: 12px 30px; margin: 0; font-size: 13px; background: #27ae60; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-family: 'Orbitron';">Subscribe Now</button>
                     </div>
                 </div>
             </article>
         </div>
 
-        <div style="margin-top: 70px; text-align: center; padding-bottom: 40px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1300px; margin: 30px auto 0 auto; background: #f8f9fa; padding: 20px; border-radius: 15px; border: 1px dashed #6c63ff; font-family: 'Poppins'; font-size: 13px; text-align: left; color: #555;">
+            <div>📱 <b>ORDER ANYTIME:</b> When you want, what you want during your subscription.</div>
+            <div>🔄 <b>FLEXIBLE ORDERING:</b> Skip, reschedule, or order ahead seamlessly.</div>
+            <div>🍲 <b>CHOOSE YOUR FAVORITES:</b> Select from a wide variety of our dynamic healthy menu.</div>
+        </div>
 
+    </section>
+    
+    <section class="monthly-exclusive" style="padding: 80px 5%; background: #fff; text-align: center;">
+        <div class="hub-header" style="margin-bottom: 50px;">
+            <span class="hub-badge"
+                style="background: #f0efff; color: #6c63ff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 800; text-transform: uppercase;">All-Inclusive
+                Elite Pass</span>
+            <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 15px 0; color: #111;">Our Premium Subscription
+            </h2>
+            <p style="color: #666;">High-performance coaching and complete nutrition with the freedom of a monthly
+                commitment.</p>
+        </div>
+    
+        <div
+            style="max-width: 1300px; margin: 0 auto; background: #ffffff; border: 2px solid #f0efff; border-radius: 30px; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(108, 99, 255, 0.05);">
+            <div
+                style="position: absolute; top: 0; left: 0; background: #e74c3c; color: #fff; padding: 8px 35px; font-size: 12px; font-weight: 800; font-family: 'Orbitron'; transform: rotate(-45deg) translateX(-35px) translateY(-12px); box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); z-index: 2;">
+                SAVE ₹7,000
+            </div>
+    
+            <div style="flex: 1.5; min-width: 300px; text-align: left; padding-left: 10px;">
+                <h3 style="font-family: 'Orbitron'; font-size: 1.8rem; color: #111; margin-bottom: 12px;">Monthly
+                    All-Inclusive Pass</h3>
+                <p style="color: #555; font-size: 15px; margin: 0; line-height: 1.6; max-width: 550px;">
+                    Experience ultimate body transformation with elite **1-on-1 Personal Training** and **All Types of
+                    Customized Gourmet Meals** delivered directly to you. No hidden charges, no long-term contracts.
+                    <span style="color: #27ae60; font-weight: 700; display: block; margin-top: 8px;">✓ Elite Personal
+                        Training Included</span>
+                    <span style="color: #27ae60; font-weight: 700; display: block; margin-top: 3px;">✓ Complete Personalized
+                        Diet & All Food Meals Included</span>
+                </p>
+            </div>
+    
+            <div style="text-align: right; min-width: 250px; flex: 1;">
+                <div style="margin-bottom: 20px;">
+                    <p
+                        style="font-size: 13px; color: #aaa; text-decoration: line-through; margin-bottom: 5px; font-weight: 500;">
+                        Regular Price: ₹52,000</p>
+                    <h2 style="font-family: 'Orbitron'; font-size: 2.8rem; color: #6c63ff; margin: 0; line-height: 1;">
+                        ₹45,000<small style="font-size: 14px; color: #888; font-weight: 400;">/mo</small></h2>
+                    <div
+                        style="display: inline-block; background: #e7fcf3; color: #27ae60; padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 800; margin-top: 15px; letter-spacing: 1px;">
+                        FULL DIET & TRAINING BUNDLE
+                    </div>
+                </div>
+    
+                <button onclick="openOrderModal('Monthly Premium All-Inclusive Pass', '₹45,000', 'nonveg')" class="sub-btn"
+                    style="background: #111; color: #fff; padding: 16px 35px; border-radius: 12px; font-family: 'Orbitron'; font-size: 12px; font-weight: 700; text-decoration: none; transition: 0.4s; display: inline-block; letter-spacing: 1.5px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: none; cursor: pointer;">
+                    CLAIM THIS OFFER →
+                </button>
+            </div>
+        </div>
+    
+        <div style="margin-top: 70px; text-align: center; padding-bottom: 40px;">
             <div style="margin-bottom: 30px;">
                 <h3
                     style="font-family: 'Orbitron'; color: #111; font-size: 1.6rem; letter-spacing: 1.5px; text-transform: uppercase;">
@@ -475,11 +873,11 @@
                 <p
                     style="color: #666; font-size: 17px; max-width: 700px; margin: 15px auto; line-height: 1.8; font-weight: 400;">
                     "We don't believe in pre-packed meals. Every order is prepared from scratch the moment you place it.
-                    While perfection takes time, the result is a fresh, 100% natural, and delicious meal delivered
-                    straight to your door."
+                    While perfection takes time, the result is a fresh, 100% natural, and delicious meal delivered straight
+                    to your door."
                 </p>
             </div>
-
+    
             <div
                 style="display: inline-flex; align-items: center; background: #fff; padding: 18px 45px; border-radius: 60px; border: 2px solid #6c63ff; box-shadow: 0 15px 35px rgba(108, 99, 255, 0.12);">
                 <div style="font-size: 32px; margin-right: 20px;">⏱️</div>
@@ -491,67 +889,16 @@
                         MINS</span>
                 </div>
             </div>
-
+    
             <p style="margin-top: 25px; color: #aaa; font-size: 14px; letter-spacing: 0.5px;">
                 🚀 Delivering fresh health across all prime locations in Pune.
             </p>
         </div>
     </section>
 
-    <section class="monthly-exclusive" style="padding: 80px 5%; background: #fff; text-align: center;">
-
-        <div class="hub-header" style="margin-bottom: 50px;">
-            <span class="hub-badge"
-                style="background: #f0efff; color: #6c63ff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 800; text-transform: uppercase;">Flexible
-                Entry</span>
-            <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 15px 0; color: #111;">Our Subscription Plan
-            </h2>
-            <p style="color: #666;">High-performance coaching with the freedom of a monthly commitment.</p>
-        </div>
-
-        <div
-            style="max-width: 1300px; margin: 0 auto; background: #ffffff; border: 2px solid #f0efff; border-radius: 30px; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(108, 99, 255, 0.05);">
-
-            <div
-                style="position: absolute; top: 0; left: 0; background: #e74c3c; color: #fff; padding: 8px 35px; font-size: 12px; font-weight: 800; font-family: 'Orbitron'; transform: rotate(-45deg) translateX(-35px) translateY(-12px); box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); z-index: 2;">
-                SAVE ₹900
-            </div>
-
-            <div style="flex: 1.5; min-width: 300px; text-align: left; padding-left: 10px;">
-                <h3 style="font-family: 'Orbitron'; font-size: 1.8rem; color: #111; margin-bottom: 12px;">Monthly Pass
-                </h3>
-                <p style="color: #555; font-size: 15px; margin: 0; line-height: 1.6; max-width: 500px;">
-                    Experience elite-level training and personalized nutrition without long-term contracts.
-                    <span style="color: #27ae60; font-weight: 700; display: block; margin-top: 5px;">✓ Full Premium
-                        Access Included</span>
-                </p>
-            </div>
-
-            <div style="text-align: right; min-width: 250px; flex: 1;">
-                <div style="margin-bottom: 20px;">
-                    <p
-                        style="font-size: 13px; color: #aaa; text-decoration: line-through; margin-bottom: 5px; font-weight: 500;">
-                        Regular Price: ₹10,470</p>
-                    <h2 style="font-family: 'Orbitron'; font-size: 2.8rem; color: #6c63ff; margin: 0; line-height: 1;">
-                        ₹9,570<small style="font-size: 14px; color: #888; font-weight: 400;">/mo</small></h2>
-                    <div
-                        style="display: inline-block; background: #e7fcf3; color: #27ae60; padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 800; margin-top: 15px; letter-spacing: 1px;">
-                        INSTANT DISCOUNT APPLIED
-                    </div>
-                </div>
-
-                <a href="contact.html" class="sub-btn"
-                    style="background: #111; color: #fff; padding: 16px 35px; border-radius: 12px; font-family: 'Orbitron'; font-size: 12px; font-weight: 700; text-decoration: none; transition: 0.4s; display: inline-block; letter-spacing: 1.5px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                    CLAIM THIS OFFER →
-                </a>
-            </div>
-
-        </div>
-    </section>
-
     <section class="section">
         <h2>Daily Meal Guide</h2>
-        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="cards">
             <div class="card" style="padding: 20px;">
                 <h4 style="color:#6c63ff;">Breakfast</h4>
                 <p style="color:#666;">Oats + Eggs + Smoothie</p>
@@ -567,6 +914,102 @@
         </div>
     </section>
 
+    <div id="whatsappModal" class="order-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
+            <h3 style="font-family: 'Orbitron'; color: #111; margin-bottom: 5px; font-size: 1.4rem;">Place Your Order</h3>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Review meal details and select optional add-ons.</p>
+            
+            <div style="background: #f7fafc; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 15px; text-align: left;">
+                <div style="font-size: 11px; font-weight: 800; color: #6c63ff;">SELECTED MEAL</div>
+                <div id="modalMealName" style="font-weight: 700; color: #111; font-size: 15px; margin-top: 2px;">Classic Chicken Bowl</div>
+            </div>
+
+            <div class="modal-form-group">
+                <label for="custName">Your Name</label>
+                <input type="text" id="custName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="modal-form-group">
+                <label style="font-size: 11px; font-weight: bold; color: #6c63ff; text-transform: uppercase;">Select Extra Add-on:</label>
+                
+                <select id="vegAddonDropdown" style="display:none;" onchange="addAddon(this)">
+                    <option value="" data-price="0">Select Extra Veg Add-on</option>
+                    <option value="Extra Paneer" data-price="60">Extra Paneer (+₹60)</option>
+                    <option value="Extra Bhakri" data-price="30">Extra Bhakri (+₹30)</option>
+                </select>
+
+                <select id="nonvegAddonDropdown" style="display:none;" onchange="addAddon(this)">
+                    <option value="" data-price="0">Select Extra Non-Veg Add-on</option>
+                    <option value="Extra Chicken 50GM" data-price="40">Extra Chicken 50GM (+₹40)</option>
+                    <option value="Extra Chicken 100GM" data-price="70">Extra Chicken 100GM (+₹70)</option>
+                    <option value="Extra Bhakri" data-price="30">Extra Bhakri (+₹30)</option>
+                </select>
+            </div>
+
+            <div class="modal-form-group">
+                <label style="font-size: 11px; font-weight: bold; color: #ff9800; text-transform: uppercase;">Premium Mustard Sauces & Dressings (+₹30):</label>
+                <select id="sauceAddonDropdown" onchange="addSauce(this)">
+                    <option value="" data-price="0">Select Premium Sauce / Dressing</option>
+                    <option value="Classic Honey Mustard Sauce" data-price="30">Classic Honey Mustard Sauce (+₹30)</option>
+                    <option value="Healthy Greek Yogurt Mustard Sauce" data-price="30">Healthy Greek Yogurt Mustard Sauce (+₹30)</option>
+                    <option value="Spicy Mustard Sauce" data-price="30">Spicy Mustard Sauce (+₹30)</option>
+                    <option value="Garlic Mustard Sauce" data-price="30">Garlic Mustard Sauce (+₹30)</option>
+                    <option value="Mustard Herb Dressing" data-price="30">Mustard Herb Dressing (+₹30)</option>
+                    <option value="Creamy Mustard Sauce" data-price="30">Creamy Mustard Sauce (+₹30)</option>
+                    <option value="Restaurant-Style Pomegranate Chicken Salad Dressing" data-price="40">Restaurant-Style Pomegranate Dressing (+₹40)</option>
+                </select>
+                
+                <div style="margin-top: 8px;">
+                    <button type="button" onclick="toggleSauceDetails()" style="background: none; border: none; color: #6c63ff; font-size: 12px; font-weight: 600; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 5px;">
+                        ℹ️ View Sauce Details / Ingredients
+                    </button>
+                    <div id="sauceDetailsPanel" style="display: none; background: #f8f9fa; border: 1px solid #e2e8f0; padding: 12px; border-radius: 10px; margin-top: 8px; font-size: 11px; color: #444; max-height: 180px; overflow-y: auto; text-align: left; line-height: 1.5;">
+                        <strong>Nutrique Co. Sauce Details:</strong><br><br>
+                        • <b>Classic Honey Mustard:</b> Dijon Mustard, Honey, Lemon Juice, Olive Oil, Salt & Black Pepper.<br><br>
+                        • <b>Healthy Greek Yogurt Mustard:</b> Greek Yogurt, Dijon Mustard, Lemon Juice, Garlic Powder, Salt & Pepper.<br><br>
+                        • <b>Spicy Mustard Sauce:</b> Dijon Mustard, Red Chilli Flakes, Honey, Apple Cider Vinegar.<br><br>
+                        • <b>Garlic Mustard Sauce:</b> Dijon Mustard, Minced Garlic, Olive Oil, Lemon Juice.<br><br>
+                        • <b>Mustard Herb Dressing:</b> Dijon Mustard, Olive Oil, Lemon Juice, Mixed Herbs, Salt & Pepper.<br><br>
+                        • <b>Creamy Mustard Sauce:</b> Greek Yogurt, Dijon Mustard, Honey, Garlic Powder, Black Pepper.<br><br>
+                        • <b>Restaurant-Style Pomegranate Dressing:</b> Dijon Mustard, Extra Virgin Olive Oil, Honey, Lemon Juice, Apple Cider Vinegar, Black Pepper, Salt.
+                    </div>
+                </div>
+            </div>
+
+            <div id="selectedAddonsContainer" style="margin-bottom: 15px; text-align: left;"></div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 10px;">
+                <div class="modal-form-group">
+                    <label for="custQty">Quantity</label>
+                    <input type="number" id="custQty" value="1" min="1" oninput="calculateTotalPrice()" required>
+                </div>
+                <div class="modal-form-group">
+                    <label for="deliveryTime">Preferred Delivery</label>
+                    <select id="deliveryTime">
+                        <option value="ASAP (45-50 Mins)">ASAP</option>
+                        <option value="Lunch (12:30 PM - 2:30 PM)">Lunch Time</option>
+                        <option value="Dinner (7:30 PM - 9:30 PM)">Dinner Time</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-form-group">
+                <label for="custAddress">Delivery Address (Pune Only)</label>
+                <textarea id="custAddress" rows="2" placeholder="Flat No, Building, Area/IT Park Name" required></textarea>
+            </div>
+
+            <div id="billDisplay" style="background: #f0efff; padding: 12px; border-radius: 12px; margin-bottom: 15px; border: 1px dashed #6c63ff; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 600; color: #444; font-size: 14px;">Total Estimated Bill:</span>
+                <span id="modalMealPrice" style="font-size: 20px; font-weight: 800; color: #6c63ff;">₹0</span>
+            </div>
+
+            <button type="button" class="whatsapp-submit-btn" onclick="sendOrderToWhatsApp()" style="width: 100%; padding: 14px; background: #25D366; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Orbitron', sans-serif;">
+                💬 Confirm Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-grid">
             <div class="footer-column">
@@ -581,7 +1024,7 @@
                     <a href="nutrition.html">Nutrition</a>
                     <a href="workout.html">Training</a>
                     <a class="active" href="food.html">Food</a>
-                    <a href="cloth.html">Clothing</a>
+                    <a href="product.html">Products</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="testimonials.html">Testimonials</a>
                     <a href="contact.html">Contact</a>
@@ -592,11 +1035,214 @@
                 <h4>Get in Touch</h4>
                 <p>📧 jaynutritionist@gmail.com</p>
                 <p>📞 +91 8484823170</p>
-                <p>📍 Eon it park Phase 2 Kharadi, Pune, Maharashtra, India</p>
+                <p>📍 Gera Commerzone IT Park Rd, Phase 2, Kharadi, Pune, Maharashtra 411014, India</p>
             </div>
         </div>
         <p class="copy" style="margin-top: 20px;">© 2026 Jay Nutritionist | All Rights Reserved</p>
     </footer>
+
+    <script>
+        let basePrice = 0;
+        let currentFoodName = "";
+        let popupAddonList = []; // Stores chosen popup addons
+
+        function updateMealPortion(btn, key, price, cals, pro, carb, fat, foodParam, imgUrl) {
+            document.getElementById(key + '-price').innerText = price;
+            document.getElementById(key + '-cals').innerText = cals;
+            document.getElementById(key + '-pro').innerText = pro;
+            document.getElementById(key + '-carb').innerText = carb;
+            document.getElementById(key + '-fat').innerText = fat;
+            
+            const cardContainer = document.getElementById(key + '-card');
+            if (cardContainer) {
+                const imgSideElement = cardContainer.querySelector('.food-img-side');
+                if (imgSideElement && imgUrl) {
+                    imgSideElement.style.backgroundImage = `url('${imgUrl}')`;
+                }
+            }
+            
+            let itemType = (key.includes('paneer') || key.includes('salad') && !key.includes('chicken')) ? 'veg' : 'nonveg';
+            document.getElementById(key + '-btn').setAttribute("onclick", `openOrderModal('${foodParam}', '${price}', '${itemType}')`);
+            
+            let parent = btn.parentElement;
+            let buttons = parent.getElementsByTagName('button');
+            for (let b of buttons) {
+                b.style.border = "1px solid #e2e8f0";
+                b.style.background = "#fff";
+                let spans = b.getElementsByTagName('span');
+                if(spans[0]) spans[0].style.color = "#555";
+                if(spans[1]) spans[1].style.color = "#111";
+            }
+            
+            let themeColor = price.includes('219') || price.includes('279') || key.includes('salad') ? '#27ae60' : (key.includes('soya') ? '#ff9800' : '#6c63ff');
+            btn.style.border = "2px solid " + themeColor;
+            btn.style.background = themeColor + "08";
+            let activeSpans = btn.getElementsByTagName('span');
+            if(activeSpans[0]) activeSpans[0].style.color = "#111";
+            if(activeSpans[1]) activeSpans[1].style.color = themeColor;
+        }
+
+        // POPUP OPEN ENGINE
+        function openOrderModal(foodName, priceStr, itemType) {
+            currentFoodName = foodName;
+            basePrice = parseInt(priceStr.replace(/[^0-9]/g, ''));
+            
+            document.getElementById('modalMealName').innerText = foodName;
+            
+            popupAddonList = [];
+            document.getElementById('selectedAddonsContainer').innerHTML = '';
+            document.getElementById('sauceDetailsPanel').style.display = 'none';
+            
+            const vegDropdown = document.getElementById('vegAddonDropdown');
+            const nonvegDropdown = document.getElementById('nonvegAddonDropdown');
+            const sauceDropdown = document.getElementById('sauceAddonDropdown');
+            
+            vegDropdown.selectedIndex = 0;
+            nonvegDropdown.selectedIndex = 0;
+            sauceDropdown.selectedIndex = 0;
+
+            if (itemType === 'veg') {
+                vegDropdown.style.display = 'block';
+                nonvegDropdown.style.display = 'none';
+            } else {
+                vegDropdown.style.display = 'none';
+                nonvegDropdown.style.display = 'block';
+            }
+
+            calculateTotalPrice();
+            document.getElementById('whatsappModal').style.display = 'flex';
+        }
+
+        function closeOrderModal() {
+            document.getElementById('whatsappModal').style.display = 'none';
+        }
+
+        function addAddon(dropdownElement) {
+            const selectedOption = dropdownElement.options[dropdownElement.selectedIndex];
+            
+            if (selectedOption.value !== "") {
+                const name = selectedOption.value;
+                const price = parseInt(selectedOption.getAttribute('data-price'));
+
+                if (popupAddonList.some(item => item.name === name)) {
+                    dropdownElement.selectedIndex = 0;
+                    return;
+                }
+
+                popupAddonList.push({ name, price });
+                renderPopupAddons();
+                calculateTotalPrice();
+                dropdownElement.selectedIndex = 0;
+            }
+        }
+
+        function addSauce(dropdownElement) {
+            const selectedOption = dropdownElement.options[dropdownElement.selectedIndex];
+            
+            if (selectedOption.value !== "") {
+                const name = selectedOption.value;
+                const price = parseInt(selectedOption.getAttribute('data-price'));
+
+                if (popupAddonList.some(item => item.name === name)) {
+                    dropdownElement.selectedIndex = 0;
+                    return;
+                }
+
+                popupAddonList.push({ name, price });
+                renderPopupAddons();
+                calculateTotalPrice();
+                dropdownElement.selectedIndex = 0;
+            }
+        }
+
+        function toggleSauceDetails() {
+            const panel = document.getElementById('sauceDetailsPanel');
+            panel.style.display = (panel.style.display === 'none' || panel.style.display === '') ? 'block' : 'none';
+        }
+
+        function renderPopupAddons() {
+            const container = document.getElementById('selectedAddonsContainer');
+            container.innerHTML = ''; 
+
+            popupAddonList.forEach((item, index) => {
+                const tag = document.createElement('span');
+                tag.style.cssText = "background:#6c63ff; color:white; padding:5px 12px; border-radius:20px; font-size:12px; margin:5px 5px 5px 0; display:inline-block; font-family:Poppins;";
+                tag.innerHTML = `${item.name} (₹${item.price}) <b style="cursor:pointer; margin-left:8px;" onclick="removePopupAddon(${index})">×</b>`;
+                container.appendChild(tag);
+            });
+        }
+
+        function removePopupAddon(index) {
+            popupAddonList.splice(index, 1);
+            renderPopupAddons();
+            calculateTotalPrice();
+        }
+
+        function calculateTotalPrice() {
+            let totalAddonPrice = 0;
+            popupAddonList.forEach(item => {
+                totalAddonPrice += item.price;
+            });
+
+            let qty = parseInt(document.getElementById('custQty').value) || 1;
+            if (qty < 1) qty = 1;
+
+            let finalPrice = (basePrice + totalAddonPrice) * qty;
+            document.getElementById('modalMealPrice').innerText = "₹" + finalPrice;
+            return finalPrice;
+        }
+
+        function sendOrderToWhatsApp() {
+            const name = document.getElementById('custName').value.trim();
+            const qty = document.getElementById('custQty').value;
+            const address = document.getElementById('custAddress').value.trim();
+            const slot = document.getElementById('deliveryTime').value;
+            const finalTotal = document.getElementById('modalMealPrice').innerText;
+            const wpNumber = "918484823170";
+
+            if (!name || !address) {
+                alert("Please fill in your Name and Address details.");
+                return;
+            }
+
+            let extrasText = popupAddonList.map(a => `${a.name} (+₹${a.price})`).join(', ') || 'None';
+
+            const message = `Hello Jay Nutritionist, I would like to place an order:
+
+*Meal Details:*
+--------------------------
+• *Item:* ${currentFoodName}
+• *Base Price:* ₹${basePrice}
+• *Quantity:* ${qty}
+• *Add-ons Chosen:* ${extrasText}
+• *Total Bill Amount:* ${finalTotal}
+
+*Delivery Details:*
+--------------------------
+• *Customer Name:* ${name}
+• *Preferred Slot:* ${slot}
+• *Address:* ${address}
+
+Sent from Jay Nutritionist Website.`;
+
+            const whatsappUrl = `https://wa.me/${wpNumber}?text=${encodeURIComponent(message)}`;
+            
+            closeOrderModal();
+            window.open(whatsappUrl, '_blank');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('whatsappModal');
+            if (event.target == modal) {
+                closeOrderModal();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const initialButtons = document.querySelectorAll('.tier-btn[data-active="true"]');
+            initialButtons.forEach(button => button.click());
+        });
+    </script>
 </body>
 
 </html>
